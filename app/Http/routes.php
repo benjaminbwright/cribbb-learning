@@ -19,3 +19,14 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+Route::get('/user', function()
+{
+  $user = new \App\User;
+  $user->username = 'philipbrown';
+  $user->email = 'name@domain.com';
+  $user->password = 'deadgiveaway';
+  $user->password_confirmation = 'deadgiveaway';
+  var_dump($user->save());
+});
